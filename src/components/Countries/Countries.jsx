@@ -41,12 +41,15 @@ const Countries = () => {
   }, []);
 
   return (
-    <div className="countries">
-      {countries.map((country, index) => (
-        // console.log(country)
-        <Country key={index} country={country} />
-      ))}
-    </div>
+    <section>
+      <h1 style={{ fontSize: "2rem" }}>List of Countries</h1>
+      <div className="countries">
+        {countries.map((country, index) => (
+          // console.log(country)
+          <Country key={index} country={country} />
+        ))}
+      </div>
+    </section>
   );
 };
 
