@@ -4,7 +4,10 @@ const Counter = () => {
   const [sub_count, set_subCount] = useState(0);
   const [alh_count, set_alhCount] = useState(0);
   const [allahuAkbar, setAllahuAkbar] = useState(0);
-
+  let sum = sub_count + alh_count + allahuAkbar;
+  if (sum === 100) {
+    console.log("Mashallah");
+  }
   const handleIncrementSub = () => {
     sub_count < 33 && set_subCount((preValue) => preValue + 1);
   };
@@ -28,47 +31,68 @@ const Counter = () => {
   const handleResetAllahu = () => {
     setAllahuAkbar(0);
   };
-  
+
   return (
-    <div className="counter-section">
-      <div className="counter__buttons--count">
-        <div className="counter__button">
-          <h1>{sub_count}</h1>
-          <button className="btn__button" onClick={handleIncrementSub}>
-            سبحان الله
-          </button>
+    <section className="counter">
+      <h1 className="counter__title--arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h1>
+      {/* <h1 className="counter__title">Tasbih Counter</h1> */}
+      <div className="counter__container">
+        <div className="counter__content">
+          <h1 className="counter__output">{sub_count}</h1>
+          <h1 className="counter__tasbih">سبحان الله</h1>
+          <div className="counter__button">
+            <button className="btn__button" onClick={handleIncrementSub}>
+              Count
+            </button>
+            <button className="btn__button" onClick={handleResetSub}>
+              Reset
+            </button>
+          </div>
         </div>
-        <div className="counter__button">
-          <h1>{alh_count}</h1>
-          <button className="btn__button" onClick={handleIncrementAlh}>
-            ٱلْحَمْدُ لِلَّٰه
-          </button>
+        <div className="counter__content">
+          <h1 className="counter__output">{alh_count}</h1>
+          <h1 className="counter__tasbih">ٱلْحَمْدُ لِلَّٰه</h1>
+          <div className="counter__button">
+            <button className="btn__button" onClick={handleIncrementAlh}>
+              Count
+            </button>
+            <button className="btn__button" onClick={handleResetAlh}>
+              Reset
+            </button>
+          </div>
         </div>
-        <div className="counter__button">
-          <h1>{allahuAkbar}</h1>
-          <button className="btn__button" onClick={handleIncrementAllahu}>
-            الله أكبر
-          </button>
+        <div className="counter__content">
+          <h1 className="counter__output">{allahuAkbar}</h1>
+          <h1 className="counter__tasbih">الله أكبر</h1>
+          <div className="counter__button">
+            <button className="btn__button" onClick={handleIncrementAllahu}>
+              Count
+            </button>
+            <button className="btn__button" onClick={handleResetAllahu}>
+              Reset
+            </button>
+          </div>
         </div>
+
+        {/* <div className="container__buttons--reset">
+          <div className="counter__button">
+            <button className="btn__button" onClick={handleResetSub}>
+              Rest
+            </button>
+          </div>
+          <div className="counter__button">
+            <button className="btn__button" onClick={handleResetAlh}>
+              Rest
+            </button>
+          </div>
+          <div className="counter__button">
+            <button className="btn__button" onClick={handleResetAllahu}>
+              Rest
+            </button>
+          </div>
+        </div> */}
       </div>
-      <div className="container__buttons--reset">
-        <div className="counter__button">
-          <button className="btn__button" onClick={handleResetSub}>
-            Rest
-          </button>
-        </div>
-        <div className="counter__button">
-          <button className="btn__button" onClick={handleResetAlh}>
-            Rest
-          </button>
-        </div>
-        <div className="counter__button">
-          <button className="btn__button" onClick={handleResetAllahu}>
-            Rest
-          </button>
-        </div>
-      </div>
-    </div>
+    </section>
   );
 };
 export default Counter;

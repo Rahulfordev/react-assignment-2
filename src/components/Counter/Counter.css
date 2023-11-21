@@ -1,6 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;300;500;700&display=swap");
+
 button {
   border: none;
   outline: none;
+}
+
+.counter__tasbih,
+.counter__title--arabic {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.counter__title--arabic{
+  font-size: 2.5rem;
 }
 
 .btn {
@@ -10,7 +21,7 @@ button {
 }
 
 .btn__button {
-  font-size: 22px;
+  font-size: 21px;
   padding: 10px 25px;
   border: 1px solid #646cff;
   cursor: pointer;
@@ -21,17 +32,80 @@ button {
   }
 }
 
-.counter__buttons--count,
-.container__buttons--reset {
+.counter {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter__title {
+  font-size: 2rem;
+}
+
+.counter__container {
+  /* display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  align-items: center;
+  gap: 4rem; */
   display: grid;
-  gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  gap: 4rem;
 }
 
-.counter__buttons--count {
-  padding-bottom: 1rem;
+.counter__content {
+  background-color: orchid;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  padding: 0.7rem 2rem 2rem 2rem;
 }
 
-/* .counter__buttons div:last-child {
-  grid-column-start: 2;
-} */
+.counter__output {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.counter__button {
+  display: flex;
+  gap: 1rem;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .counter__container {
+    /* display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    align-items: center;
+    gap: 4rem; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    /* height: calc(100vh - 50px); */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .counter__container {
+    /* display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    align-items: center;
+    gap: 4rem; */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    height: calc(100vh - 50px);
+  }
+}
