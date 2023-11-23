@@ -20,6 +20,8 @@ const Counter = () => {
     allahuAkbar < 34 && setAllahuAkbar((preValue) => preValue + 1);
   };
 
+  let allCountNumber = sub_count + alh_count + allahuAkbar;
+
   const handleResetSub = () => {
     set_subCount(0);
   };
@@ -31,13 +33,15 @@ const Counter = () => {
   const handleResetAllahu = () => {
     setAllahuAkbar(0);
   };
-
   return (
     <section className="counter">
-      <h1 className="counter__title--arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h1>
+      <h1 className="counter__title--arabic">
+        بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+      </h1>
+      <h1 className="counter__total--count">{allCountNumber}</h1>
       {/* <h1 className="counter__title">Tasbih Counter</h1> */}
       <div className="counter__container">
-        <div className="counter__content">
+        <div className="counter__content card ">
           <h1 className="counter__output">{sub_count}</h1>
           <h1 className="counter__tasbih">سبحان الله</h1>
           <div className="counter__button">
@@ -49,7 +53,7 @@ const Counter = () => {
             </button>
           </div>
         </div>
-        <div className="counter__content">
+        <div className="counter__content card ">
           <h1 className="counter__output">{alh_count}</h1>
           <h1 className="counter__tasbih">ٱلْحَمْدُ لِلَّٰه</h1>
           <div className="counter__button">
@@ -61,7 +65,7 @@ const Counter = () => {
             </button>
           </div>
         </div>
-        <div className="counter__content">
+        <div className="counter__content card card-third">
           <h1 className="counter__output">{allahuAkbar}</h1>
           <h1 className="counter__tasbih">الله أكبر</h1>
           <div className="counter__button">
@@ -73,6 +77,7 @@ const Counter = () => {
             </button>
           </div>
         </div>
+        {}
 
         {/* <div className="container__buttons--reset">
           <div className="counter__button">

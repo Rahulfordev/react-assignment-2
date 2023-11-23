@@ -10,8 +10,13 @@ button {
   font-family: "IBM Plex Sans Arabic", sans-serif;
 }
 
-.counter__title--arabic{
+.counter__title--arabic {
   font-size: 2.5rem;
+}
+
+.counter__total--count {
+  margin-block-start: 0px;
+  font-size: 3rem;
 }
 
 .btn {
@@ -45,11 +50,6 @@ button {
 }
 
 .counter__container {
-  /* display: flex;
-  justify-content: center;
-  margin-inline: auto;
-  align-items: center;
-  gap: 4rem; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
@@ -80,11 +80,6 @@ button {
 
 @media screen and (max-width: 900px) {
   .counter__container {
-    /* display: flex;
-    justify-content: center;
-    margin-inline: auto;
-    align-items: center;
-    gap: 4rem; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
@@ -92,20 +87,27 @@ button {
     margin-inline: auto;
     /* height: calc(100vh - 50px); */
   }
+
+  .counter {
+    height: 750px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .counter__container {
-    /* display: flex;
-    justify-content: center;
-    margin-inline: auto;
-    align-items: center;
-    gap: 4rem; */
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: center;
     align-items: center;
     margin-inline: auto;
-    height: calc(100vh - 50px);
+    /* height: calc(100vh - 230px); */
+  }
+
+  .counter {
+    height: 1000px;
+  }
+
+  .counter__title--arabic {
+    font-size: 1.7rem;
   }
 }
