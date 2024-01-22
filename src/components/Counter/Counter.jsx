@@ -5,6 +5,7 @@ const Counter = () => {
   const [alh_count, set_alhCount] = useState(0);
   const [allahuAkbar, setAllahuAkbar] = useState(0);
   let sum = sub_count + alh_count + allahuAkbar;
+
   if (sum === 100) {
     console.log("Mashallah");
   }

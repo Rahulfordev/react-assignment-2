@@ -1,5 +1,5 @@
 import Counter from "../counter/Counter";
-// import Countries from "../Countries/Countries";
+import Countries from "../Countries/Countries";
 import "./App.css";
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         {/* <h1>Counter Application</h1>
          */}
         <Counter />
-        {/* <Countries /> */}
+        <Countries />
       </div>
     </>
   );
